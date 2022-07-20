@@ -5,16 +5,23 @@
 
 using namespace std;
 
-int main()
+void ProcessArray(int array[], unsigned int arraySize);
+
+void ProcessArray(int array[], unsigned int arraySize)
 {
-    const int arraySize = 7;
-
-    int array[arraySize]{ 1, 7, 234, -54, 99, 384, -36};
-
     int largest = array[0];
 
     cout << "Displaying the array..." << endl;
-    cout << "[";
+    cout << "[" << array[0];
+
+    if (arraySize > 1)
+    {
+        cout << ", ";
+    }
+    else
+    {
+        cout << "]" << endl;
+    }
 
     for (int i = 1; i < arraySize; i++)
     {
@@ -30,8 +37,17 @@ int main()
         {
             cout << ", ";
         }
-        
+
     }
 
-    cout << "The largest number is " << largest;
+    cout << "The largest number is " << largest << ".";
+}
+
+int main()
+{
+    const unsigned int arraySize = 6;
+
+    int array[arraySize]{ 1, 45, -84, 31, 153, 17};
+
+    ProcessArray(array, arraySize);
 }
